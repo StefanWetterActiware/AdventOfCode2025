@@ -13,7 +13,7 @@ static class Helper
     [DebuggerHidden]
     public static void loadInput(int tag)
     {
-        string urltempl = "https://adventofcode.com/2024/day/{0}/input";
+        string urltempl = "https://adventofcode.com/2025/day/{0}/input";
 
         System.IO.Directory.CreateDirectory("input");
 
