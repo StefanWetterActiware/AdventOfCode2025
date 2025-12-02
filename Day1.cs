@@ -1,10 +1,7 @@
-﻿using System.Text.RegularExpressions;
-
-
+﻿
 class Day1 {
     internal static void doit(){
-        Regex dayNoR = new(@"\d*$");
-        var lines = Helper.getInputAsLines(int.Parse(dayNoR.Match(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name).Value));
+        var lines = Helper.getInputAsLines(int.Parse(Helper.dayNoR.Match(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name).Value));
 
         long sumA = 0;
         long sumB = 0;

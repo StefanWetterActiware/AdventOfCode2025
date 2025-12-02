@@ -4,6 +4,8 @@ using System.Reflection.Metadata;
 static class Helper
 {
     private static string cachefileTempl = "input/day{0}";
+    public static System.Text.RegularExpressions.Regex dayNoR = new(@"\d*$");
+
 
     [DebuggerHidden]
     private static string getCacheFileName(int tag, bool test = false) {
