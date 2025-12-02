@@ -17,6 +17,17 @@ class Day2 {
                 var s2 = s.Substring(l2);
                 if (s1.Equals(s2))
                     sumA += i;
+
+                for (int j = 1; j <= l2; j++)
+                {
+                    var p = s.Substring(0, j);
+                    var q = s.Replace(p, "");
+                    if (string.IsNullOrWhiteSpace(q))
+                    {
+                        sumB += i;
+                        break;
+                    }
+                }
             }
         }
 
