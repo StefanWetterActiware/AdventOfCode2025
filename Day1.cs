@@ -11,11 +11,27 @@ class Day1 {
         foreach (var line in lines) {
             char direction = line[0];
             int num = int.Parse(line[1..]);
-            if (direction == 'L')
+            
+            //Ganze Hunderter schon auf B, spielen keine Rolle für die Drehung später
+            sumB += num / 100;
+            num = num % 100;
+
+            if (direction == 'L') {
+                if (dial == 0)
+                    dial += 100;
+
                 dial -= num;
-            else
+                sumB += (dial < 1) ? 1 : 0;
+            } else {
                 dial += num;
+                sumB += (dial > 99) ? 1 : 0;
+            }
+
+            //Normalisieren
             dial = dial % 100;
+            if (dial < 0)
+                dial += 100;
+
             sumA += dial == 0 ? 1 : 0;
         }
 
